@@ -1,3 +1,5 @@
-function validatePassword() {}
+function validatePassword() {
+    
+}
 
 module.exports = validatePassword;
