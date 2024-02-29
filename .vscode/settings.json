@@ -1,2 +1,11 @@
 {
-}
+    "leetcode.defaultLanguage": "javascript",
+    "leetcode.workspaceFolder": "/D/Code/leetcode",
+    "leetcode.filePath": {
+      "default": {
+        "folder": "",
+        "filename": "${id}.${ext}"
+      }
+    }
+  }
+  
