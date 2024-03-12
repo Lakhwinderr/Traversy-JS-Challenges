@@ -97,6 +97,13 @@ class HashTable {
   }
 
  // ADD getValues() METHOD
+ getValues(){
+  const values = []
+  this.storage.forEach(bucket => {
+      bucket.forEach(pair => values.push(pair[1]))
+  })
+  return values;
+}
 }
 
 module.exports = HashTable;

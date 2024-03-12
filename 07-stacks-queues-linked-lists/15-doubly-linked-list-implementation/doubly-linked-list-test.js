@@ -32,9 +32,9 @@ describe('DoublyLinkedList', () => {
     list.insertAt(2, 300);
 
     expect(list.head.data).toBe(100);
-    expect(list.head.next.data).toBe(200);
-    expect(list.head.next.next.data).toBe(300);
-    expect(list.head.next.next.next.data).toBe(400);
+    expect(list.head.right.data).toBe(200);
+    expect(list.head.right.right.data).toBe(300);
+    expect(list.head.right.right.right.data).toBe(400);
     expect(list.length).toBe(4);
   });
 
@@ -55,8 +55,8 @@ describe('DoublyLinkedList', () => {
     list.remove(2);
 
     expect(list.head.data).toBe(100);
-    expect(list.head.next.data).toBe(200);
-    expect(list.head.next.next.data).toBe(400);
+    expect(list.head.right.data).toBe(200);
+    expect(list.head.right.right.data).toBe(400);
     expect(list.length).toBe(3);
   });
 
