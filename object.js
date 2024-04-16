@@ -1,21 +1,31 @@
-var lengthOfLongestSubstring = function(s) {
-    const set = new Set();
-    let i = 0;
-    let j = 1;
-    set.add(s[i]);
-    let max = 1;
-    let count = 0;
-    while(j < s.length){
-        while(j < s.length && !set.has(s[j])){
-            set.add(s[j]);
-            j++;
+var characterReplacement = function(s, k) {
+    let max = 0;
+    for(let i = 0; i < s.length; i++){
+        if(s[i - 1] === s[i]){
+            continue;
         }
-        count = j - i;
-        max = Math.max(count, max);
-        set.delete(s[i]);
-        i++;
+        let l = i;
+        let r = i;
+        let c = k
+        while(l > -1 && c > 0){
+            if(l > 0 && s[l] === s[i]){
+                l--;
+            }else{
+                l--;
+                c--;
+            }
+        }
+        while(r < s.length && c > 0){
+            if(s[r] === s[i]){
+                r++;
+            }else{
+                r++;
+                c--;
+            }
+        }
+        const count = r - l;
+        max = Math.max(count, max)
     }
-    return max;
+     return max;
 };
-
-console.log(lengthOfLongestSubstring("bbbbb"))
+console.log(characterReplacement("BAAAB",2))
